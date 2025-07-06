@@ -1,21 +1,47 @@
-// let heading =  React.createElement("h1", {id: "firstID"}, "Hello world from react")
 import React from "react"
-import ReactDOM from "react-dom/client"
+import ReactDOM from "react-dom/client" 
  
+// JSX (transpilled before it reaches th JS) - Parcel - Babel
 
-    const parent = React.createElement("div", {id: "parent"},[
-         React.createElement("div", {id:"child"}, 
-            [React.createElement("h1", {},"I am a child") , 
-             React.createElement("h2", {},"I am a child 2")]
-            ),
-            React.createElement("div", {id:"child"}, 
-            [React.createElement("h1", {},"I am a child") , 
-             React.createElement("h2", {},"I am a child 2")]
-            )])
+// JSX => React.createElement => ReactElement-JS Object => HTMLElement(render)
+
+const jsxHeading = (<h1 
+id = "heading">
+    Namaste from JSX
+</h1>);
+
+// React components
+// Class based components - OLD
+// Functional components - NEW
+
+let HeadingComponent1 = ()=> {
+  return  <h1>This is React function component from top</h1>
+}
+
+let Title = ()=> {
+  return  <h2>This is title</h2>
+}
+
+// Above and below code are same
 
 
+let balance = 1000
+// Component Composition 
+let HeadingComponent2 = ()=> (
+    <div>
+        HeadingComponent1
+        <Title/>
+        {balance = balance * Math.random(1000)}
+<h1>
+    My bank balance is = `${balance}`
+</h1>
+</div>
+)
 
-    console.log(parent)
-    const root = ReactDOM.createRoot(document.getElementById("root"))
-   root.render(parent)
-    
+
+const root = ReactDOM.createRoot(document.getElementById("root"))
+
+root.render(<HeadingComponent2/>)
+
+
+// JSX take care of cross site scripting to prevent injection attacks from attackers.
