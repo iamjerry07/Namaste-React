@@ -29,8 +29,6 @@ background-color: #F68C1C;
 
 .res-card{
     width: 200px;
-    /* height: 300px; */
-    /* border: 1px solid black; */
     padding: 5px;
     background-color: #F6F1EF;
     margin: 10px;
@@ -38,8 +36,8 @@ background-color: #F68C1C;
 .res-card:hover{
     cursor: pointer;
     border: 1px solid black;
-    box-shadow: inset;
 }
+
 .card-name{
     text-align: center;
 }
@@ -70,4 +68,6 @@ background-color: #F68C1C;
     padding: 30px;
 }
 
-
+.top-rated-button{
+   padding: 15px;
+}
