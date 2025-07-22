@@ -4,23 +4,27 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [restaurants, setResturants] = useState([]);
-  const [filteredResturant , setFilteredResturant] = useState([]);
+  const [filteredResturant, setFilteredResturant] = useState([]);
   const [search, setSearch] = useState("");
-
+  console.log("rendering");
   useEffect(() => {
     swiggyData();
   }, []);
 
   const swiggyData = async () => {
     let swiggyData = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.507241&lng=77.06404859999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://corsproxy.io/https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.507241&lng=77.06404859999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.507241&lng=77.06404859999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
 
-    const json = await swiggyData.json();
+    const json = await swiggyData.json(); 
+    console.log(json);
     setResturants(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    setFilteredResturant( json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    setFilteredResturant(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
 
   // conditional rendering
@@ -29,24 +33,24 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
-        <div className="search">
+        <div className="seach-container">
           <input
             type="text"
             value={search}
+            className="search-bar"
             onChange={(e) => {
               setSearch(e.target.value);
             }}
-          />
+          ></input>
           <button
             onClick={() => {
-              console.log(search)
-              let filteredRes = restaurants.filter((res) => 
-                 res.info.name.toLowerCase().includes(search.toLowerCase())
-               );
-              setFilteredResturant(filteredRes);
+              let filteredData = restaurants.filter((res) =>
+                res.info.name.toLowerCase().includes(search.toLowerCase())
+              );
+              setFilteredResturant(filteredData);
             }}
           >
-            Search
+            Submit
           </button>
         </div>
         <div className="top-rated-container">

@@ -69,8 +69,7 @@ background-color: #F68C1C;
 }
 
 .top-rated-container{
-   /* height: 20px; */
-   padding-top: 10px;
+   padding-left: 25px;
 }
 
 .shimmer-card{
@@ -93,4 +92,6 @@ background-color: #F68C1C;
 
 .filter{
 display: flex;
+padding-top: 10px;
+padding-left: 15px;
 }
