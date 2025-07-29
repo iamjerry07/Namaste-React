@@ -40,6 +40,7 @@ background-color: #F68C1C;
 
 .card-name{
     text-align: center;
+    color: black;
 }
 .res-logo{
     width : 100%;
@@ -94,4 +95,24 @@ background-color: #F68C1C;
 display: flex;
 padding-top: 10px;
 padding-left: 15px;
+}
+
+.about-container{
+    justify-content: center;
+}
+
+.about-heading{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.about-content{
+    display: flex;
+    justify-content: center;
+    /* width: 700px; */
+    margin: 50px 200px;
+    border: black solid 1px;
+    padding: 50px;
+    background-color: #fca84d;
 }
