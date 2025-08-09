@@ -1,4 +1,6 @@
-.header{
+@import "tailwindcss";
+
+/* .header{
 display: flex;
 justify-content: space-between;
 border: 1px solid black;
@@ -104,15 +106,13 @@ padding-left: 15px;
 .about-heading{
     display: flex;
     justify-content: center;
-    /* align-items: center; */
 }
 
 .about-content{
     display: flex;
     justify-content: center;
-    /* width: 700px; */
     margin: 50px 200px;
     border: black solid 1px;
     padding: 50px;
     background-color: #fca84d;
-}
+} */
